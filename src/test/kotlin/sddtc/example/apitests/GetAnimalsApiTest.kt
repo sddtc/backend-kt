@@ -17,7 +17,6 @@ import sddtc.example.animals.AnimalsRepository
 import sddtc.example.animals.entities.Animals
 import java.util.UUID
 
-
 @ApiTest
 @DisplayName("GET /animals")
 class GetAnimalsApiTest @Autowired constructor(

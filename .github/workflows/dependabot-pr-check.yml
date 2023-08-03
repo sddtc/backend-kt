@@ -16,8 +16,14 @@ jobs:
           # Dependabot can only check out at the HEAD of the PR branch
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: yarn install
-        run: yarn install
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: run test
+        run: ./gradlew clean test
 
   dependabot-auto-approve:
     if: ${{ github.actor == 'dependabot[bot]' }}

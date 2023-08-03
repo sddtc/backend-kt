@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.jetbrains.kotlin.gradle.internal.LogType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -40,8 +42,11 @@ dependencies {
   implementation("org.postgresql:postgresql:42.6.0")
   implementation("org.liquibase:liquibase-core:4.23.0")
 
+  implementation("org.springframework.boot:spring-boot-gradle-plugin:3.1.2")
+
   testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.2")
   testImplementation("io.mockk:mockk:1.13.5")
+  testImplementation("com.h2database:h2:2.2.220")
 }
 
 tasks.withType<KotlinCompile> {
@@ -53,4 +58,9 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
   useJUnitPlatform()
+  systemProperty("spring.profiles.active", "test")
+
+  testLogging {
+    events(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.STANDARD_OUT)
+  }
 }
