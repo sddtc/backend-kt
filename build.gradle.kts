@@ -5,7 +5,10 @@ plugins {
   id("io.spring.dependency-management") version "1.1.0"
   kotlin("jvm") version "1.8.21"
   kotlin("plugin.spring") version "1.8.21"
+  id("org.jetbrains.kotlin.plugin.noarg") version "1.9.0"
 }
+
+apply(plugin = "kotlin-jpa")
 
 group = "sddtc.example"
 version = "0.0.1-SNAPSHOT"
@@ -20,10 +23,25 @@ repositories {
   mavenCentral()
 }
 
+buildscript {
+  extra.apply {
+    set("jakarta-servlet.version", "5.0.0")
+  }
+}
+
 dependencies {
-  implementation("org.springframework.boot:spring-boot-starter")
+  implementation("org.springframework.boot:spring-boot-starter:3.1.2")
+  implementation("org.springframework.boot:spring-boot-starter-web:3.1.2")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
-  testImplementation("org.springframework.boot:spring-boot-starter-test")
+  implementation("org.springframework:spring-web:6.0.11")
+  implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+  implementation("org.springframework.boot:spring-boot-starter-jetty:3.1.2")
+  implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.2")
+  implementation("org.postgresql:postgresql:42.6.0")
+  implementation("org.liquibase:liquibase-core:4.23.0")
+
+  testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.2")
+  testImplementation("io.mockk:mockk:1.13.5")
 }
 
 tasks.withType<KotlinCompile> {
