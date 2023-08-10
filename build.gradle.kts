@@ -40,7 +40,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-jetty:3.1.2")
   implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.2")
   implementation("org.postgresql:postgresql:42.6.0")
-  implementation("org.liquibase:liquibase-core:4.23.0")
+  implementation("org.liquibase:liquibase-core:4.23.1")
 
   implementation("org.springframework.boot:spring-boot-gradle-plugin:3.1.2")
 
