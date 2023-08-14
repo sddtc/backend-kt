@@ -45,7 +45,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-gradle-plugin:3.1.2")
 
   testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.2")
-  testImplementation("io.mockk:mockk:1.13.5")
+  testImplementation("io.mockk:mockk:1.13.7")
   testImplementation("com.h2database:h2:2.2.220")
 }
 
