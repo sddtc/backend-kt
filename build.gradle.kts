@@ -42,7 +42,7 @@ dependencies {
   implementation("org.postgresql:postgresql:42.6.0")
   implementation("org.liquibase:liquibase-core:4.23.2")
 
-  implementation("org.springframework.boot:spring-boot-gradle-plugin:3.1.2")
+  implementation("org.springframework.boot:spring-boot-gradle-plugin:3.2.0")
 
   testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.2")
   testImplementation("io.mockk:mockk:1.13.7")
