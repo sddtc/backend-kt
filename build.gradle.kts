@@ -37,7 +37,7 @@ dependencies {
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.springframework:spring-web:6.0.11")
   implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
-  implementation("org.springframework.boot:spring-boot-starter-jetty:3.1.2")
+  implementation("org.springframework.boot:spring-boot-starter-jetty:3.2.2")
   implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.2.0")
   implementation("org.postgresql:postgresql:42.6.0")
   implementation("org.liquibase:liquibase-core:4.23.2")
