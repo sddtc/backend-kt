@@ -1,7 +1,7 @@
 version: "2.3"
 services:
   backend-demo-postgres:
-    image: registry.app.corpintra.net/dockerhub/library/postgres:13.4
+    image: postgres:16.1
     container_name: backend-demo-postgres
     environment:
       POSTGRES_USER: "postgres"
